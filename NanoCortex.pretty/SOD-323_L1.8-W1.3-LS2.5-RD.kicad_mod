@@ -1,0 +1,241 @@
+(footprint "SOD-323_L1.8-W1.3-LS2.5-RD"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -4 180)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "6050ebac-da63-4d3a-b68e-2a6c528301ee")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SD05-01FTG"
+		(at 0 4 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ff2b7044-aa60-4858-ae7c-9c6371af50f0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "fbc04dc2-a223-4d43-82c5-3984372361af")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" "Zener diode, small symbol"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8c2e563d-de79-434b-a4b7-2a9d547cb09a")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "LCSC Part" "C426873"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "06ee5cb7-de44-41d3-83eb-dd8a6e91342f")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property ki_fp_filters "TO-???* *_Diode_* *SingleDiode* D_*")
+	(sheetname "/")
+	(sheetfile "arm_tiny_pcb_v2.kicad_sch")
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -0.85 -0.73)
+		(end 0.9 -0.73)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "80775823-8269-4e7c-acbc-689f4f073ac7")
+	)
+	(fp_line
+		(start -0.85 0.73)
+		(end 0.9 0.73)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "49bd1e6b-c1dd-4ac9-ba95-416da7842b16")
+	)
+	(fp_line
+		(start -0.45 -0.73)
+		(end -0.45 0.73)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7128792a-7ef6-4770-b016-654dba65f270")
+	)
+	(fp_line
+		(start 0.9 -0.73)
+		(end 0.9 -0.53)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "cb7a94f9-f1d4-4fb1-9cc5-6f5efdfddae2")
+	)
+	(fp_line
+		(start 0.9 0.73)
+		(end 0.9 0.52)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7f224f19-ef8a-4474-93fd-98716aca7ca7")
+	)
+	(fp_circle
+		(center -1.23 0.65)
+		(end -1.2 0.65)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "cd19f1d8-1882-4549-b5ed-215430e91dee")
+	)
+	(fp_poly
+		(pts
+			(xy -0.775005 -0.80231) (xy -0.775005 -0.449885) (xy -1.079779 -0.449885) (xy -1.079779 -0.80231)
+			(xy -0.775005 -0.80231)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "1aad77b4-bac2-43de-b784-c7e66e168761")
+	)
+	(fp_poly
+		(pts
+			(xy -0.775005 0.802538) (xy -0.775005 0.450139) (xy -1.079779 0.450139) (xy -1.079779 0.802538) (xy -0.775005 0.802538)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "84738113-011c-4da1-8631-fc56a3a9364e")
+	)
+	(fp_line
+		(start -0.82 -0.65)
+		(end 0.88 -0.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "3c8440c1-fafe-46f2-8ea6-04b11f6af41b")
+	)
+	(fp_line
+		(start -0.82 0.65)
+		(end -0.82 -0.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "23e7fb07-2b06-4369-ab28-4aba5bea8152")
+	)
+	(fp_line
+		(start 0.88 -0.65)
+		(end 0.88 0.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "71e3a025-52ce-46d1-be7e-a21dffab8228")
+	)
+	(fp_line
+		(start 0.88 0.65)
+		(end -0.82 0.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "f8b24694-21d3-4539-bc1b-25fbca1b7fe2")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(uuid "decd6513-b73a-456b-a71d-973dfe88854a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -1.17 0)
+		(size 1 0.7)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "65b4367e-defb-4391-aac3-0e3500ce2133")
+	)
+	(pad "2" smd rect
+		(at 1.17 0)
+		(size 1 0.7)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges no)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "7b3c9122-912b-4987-8d4d-0b073c350453")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/NanoCortex.3dshapes/SOD-323_L1.8-W1.3-LS2.5-RD.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

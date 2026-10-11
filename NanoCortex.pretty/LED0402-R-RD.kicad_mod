@@ -4,10 +4,10 @@
 	(generator_version "10.0")
 	(layer "F.Cu")
 	(property "Reference" "REF**"
-		(at -0.21 -2.53 0)
+		(at 0 -4 180)
 		(layer "F.SilkS")
 		(hide yes)
-		(uuid "2d6841ab-45d3-4765-9547-019cb76fac44")
+		(uuid "53ea7fe9-8695-4847-beb1-09c3595c7b23")
 		(effects
 			(font
 				(size 1 1)
@@ -16,10 +16,10 @@
 		)
 	)
 	(property "Value" "16-213/BHC-AN1P2/3T"
-		(at 0 4 0)
+		(at 0 4 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "c8094128-05b4-45ef-bd6f-76553a01eac0")
+		(uuid "d71683a6-79c2-4101-b8fb-55aae776a875")
 		(effects
 			(font
 				(size 1 1)
@@ -28,10 +28,10 @@
 		)
 	)
 	(property "Datasheet" "https://lcsc.com/product-detail/Light-Emitting-Diodes-LED_blue-0402_C131223.html"
-		(at 0 0 0)
+		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "96ea66f3-9ed4-465f-a341-3d0f291a9216")
+		(uuid "aec2b306-1524-4f03-a578-b5407324fa48")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -39,10 +39,10 @@
 		)
 	)
 	(property "Description" ""
-		(at 0 0 0)
+		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "41fe7443-e9c2-4550-91d4-fc3762fd1e57")
+		(uuid "158c334a-aa25-4a06-8aae-3ea71ea12db8")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -50,10 +50,10 @@
 		)
 	)
 	(property "LCSC Part" "C131223"
-		(at 0 0 0)
+		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "49b35244-fe19-44f5-a8f3-875c586df2dd")
+		(uuid "f2cbe250-6bc7-4315-97e9-8841d85af64f")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -66,7 +66,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "598495c7-9178-44a6-86d4-4dbbcb3b072e")
+		(uuid "d51c8fff-2272-4a8a-a0b1-a85ba7dd576f")
 		(effects
 			(font
 				(size 1 1)
@@ -79,7 +79,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "0796f777-9006-4fa4-9072-38d4581f5eda")
+		(uuid "3c3bd840-7c1e-42d2-a60d-c53a7e8102bc")
 		(effects
 			(font
 				(size 1 1)
@@ -92,7 +92,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "f28ce194-d9f6-4156-974f-6a370c24346d")
+		(uuid "9282204c-ebfc-4daa-b997-bef04b54674e")
 		(effects
 			(font
 				(size 1 1)
@@ -101,7 +101,7 @@
 		)
 	)
 	(sheetname "/")
-	(sheetfile "arm_tiny_pcb.kicad_sch")
+	(sheetfile "arm_tiny_pcb_v2.kicad_sch")
 	(attr smd)
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_line
@@ -112,7 +112,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "989000dd-8c5c-49bb-b046-52e91d910a09")
+		(uuid "53cc144c-d892-4070-92fc-b586b90b27a1")
 	)
 	(fp_line
 		(start -0.98 0.35)
@@ -122,7 +122,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "ad14a18a-2b1e-4f9e-875b-cf49f17de016")
+		(uuid "8cc9c112-6c30-4dc3-bd8d-76912039c87e")
 	)
 	(fp_line
 		(start -0.83 -0.5)
@@ -132,7 +132,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "bc6d15bc-5a3a-497b-9bfb-b80e45fb79ca")
+		(uuid "aed6589d-4f91-4bec-8220-070a9e6a9611")
 	)
 	(fp_line
 		(start -0.83 0.5)
@@ -142,7 +142,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "0d3c0b8d-ffe9-4b2c-ad49-553f34eb89f2")
+		(uuid "27a37c25-0b88-4479-b889-e5564a89f354")
 	)
 	(fp_line
 		(start -0.19 0.5)
@@ -152,7 +152,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "56fd41ff-b7d7-4bc2-a154-1d4416816b15")
+		(uuid "433905e8-f80e-427b-ae05-513e464cffb1")
 	)
 	(fp_line
 		(start 0.19 0.5)
@@ -162,7 +162,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "691922bb-da61-405d-9e12-42774637bd38")
+		(uuid "7b89229c-eef0-4f3f-b4cb-7146a9255997")
 	)
 	(fp_line
 		(start 0.98 -0.5)
@@ -172,7 +172,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "270d1407-bbd5-4adf-8046-843625108c2e")
+		(uuid "2c6fb15b-1072-436a-a2bf-d9f070681790")
 	)
 	(fp_line
 		(start 0.98 0.5)
@@ -182,7 +182,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "bcd1e433-2fb2-40b7-a86d-abf033ae2600")
+		(uuid "b8171f6e-16b7-4a42-bce4-3b6b330fcf74")
 	)
 	(fp_circle
 		(center 0.51 -0.25)
@@ -193,7 +193,7 @@
 		)
 		(fill no)
 		(layer "F.SilkS")
-		(uuid "39085bd3-72c1-4ce2-bad0-22f01f8952a9")
+		(uuid "40c8dfa6-a340-4004-b29a-c945ddaea39e")
 	)
 	(fp_poly
 		(pts
@@ -205,7 +205,7 @@
 		)
 		(fill yes)
 		(layer "F.SilkS")
-		(uuid "776499b7-0ce5-480f-bad0-343f15218f6f")
+		(uuid "b6c9cedf-9520-4982-b7c9-829f24f3819e")
 	)
 	(fp_line
 		(start -0.5 -0.25)
@@ -215,7 +215,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "d8f9e039-1b7d-4f68-9ce6-3b3aead0f038")
+		(uuid "c502d620-d253-45df-906d-9168e0e3d43a")
 	)
 	(fp_line
 		(start -0.5 0.25)
@@ -225,7 +225,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "d7ad9597-4023-481b-a491-a25322ca5f86")
+		(uuid "4b5e44a1-569e-4e07-830e-60a43319d967")
 	)
 	(fp_line
 		(start 0.5 -0.25)
@@ -235,7 +235,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "d67fd461-39c1-46f6-913a-9c908acca7f1")
+		(uuid "57f5a63b-d6d2-43ed-afaa-cb32c51aba3d")
 	)
 	(fp_line
 		(start 0.5 0.25)
@@ -245,22 +245,33 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "9cc8edeb-9793-4642-a8f6-519684938d71")
+		(uuid "a2b2e115-d6dc-421e-ae85-e9ed089f0d5b")
 	)
 	(pad "1" smd rect
 		(at 0.42 0)
 		(size 0.5 0.54)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "225b2f0d-7fa3-4f94-aede-f948973487e0")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges no)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "9c9a45f7-6976-48ec-8a31-8e51970a93d7")
 	)
 	(pad "2" smd rect
 		(at -0.42 0)
 		(size 0.5 0.54)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "7c3dc45b-19c3-4242-8f81-433b7b5aafb7")
+		(uuid "d20b7862-201f-4c0b-a345-b21b5fa9919d")
 	)
 	(embedded_fonts no)
-	(model "Z:/KiCad/lib/easyeda2kicad.3dshapes/LED0402_L1.0-W0.5-H0.4.wrl"
+	(model "${KIPRJMOD}/NanoCortex.3dshapes/LED0402_L1.0-W0.5-H0.4.wrl"
 		(offset
 			(xyz 0 0 0)
 		)

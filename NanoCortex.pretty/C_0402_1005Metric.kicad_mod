@@ -9,7 +9,7 @@
 		(at 0 -1.16 180)
 		(layer "F.SilkS")
 		(hide yes)
-		(uuid "80b43066-6162-4744-9a37-064250ac3a8d")
+		(uuid "718d719d-5277-4525-9ecf-9668f3388f2c")
 		(effects
 			(font
 				(size 1 1)
@@ -21,7 +21,7 @@
 		(at 0 1.16 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "e0d90cb1-720d-4eb8-bddd-efecddec20a2")
+		(uuid "617c3c6b-e041-449e-a9eb-916e0cda4094")
 		(effects
 			(font
 				(size 1 1)
@@ -33,7 +33,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "9de5b1c4-1d38-42a0-b9ab-b0106fc657a2")
+		(uuid "53ba5e37-4476-4a8b-b167-5e0ab03a1804")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -44,22 +44,10 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "d2d5c93a-82b7-47b4-a78f-3dd4d385090c")
+		(uuid "19caefb9-9850-40c0-9103-ecb594c9ed19")
 		(effects
 			(font
 				(size 1.27 1.27)
-			)
-		)
-	)
-	(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-		(at 0 0 180)
-		(layer "F.SilkS")
-		(hide yes)
-		(uuid "f21e7bbc-a7aa-461d-acb0-840e4d5cbce7")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
 			)
 		)
 	)
@@ -68,7 +56,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "67e019d4-2e5b-41b9-86a4-ce8be3723a74")
+		(uuid "93e222c0-71ef-4c20-9807-9d478cff7a6a")
 		(effects
 			(font
 				(size 1 1)
@@ -78,7 +66,7 @@
 	)
 	(property ki_fp_filters "C_*")
 	(sheetname "/")
-	(sheetfile "arm_tiny_pcb.kicad_sch")
+	(sheetfile "arm_tiny_pcb_v2.kicad_sch")
 	(attr smd)
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_line
@@ -89,7 +77,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "9becc07c-488d-43cd-a365-4d5c7f916995")
+		(uuid "9152bab7-ba43-4fda-a974-93da34f3c1fb")
 	)
 	(fp_line
 		(start -0.107836 0.36)
@@ -99,7 +87,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "8d0e91a6-a0bb-4161-8afd-c92c5d596917")
+		(uuid "7aa53436-6746-4790-a396-fe69406d2b21")
 	)
 	(fp_rect
 		(start -0.91 -0.46)
@@ -110,7 +98,7 @@
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "997540d7-b35b-4d17-9c66-8b32e85e6018")
+		(uuid "fb4eea24-9c6e-4c54-b252-411020521502")
 	)
 	(fp_rect
 		(start -0.5 -0.25)
@@ -121,12 +109,12 @@
 		)
 		(fill no)
 		(layer "F.Fab")
-		(uuid "b51f9a8f-c1a5-4a9d-8abe-cd4f0e5d074d")
+		(uuid "d76c8062-0bb8-441e-ae7b-e9e065ad1f46")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 0 180)
 		(layer "F.Fab")
-		(uuid "f0fb51ee-d46e-428a-9a46-e5df86b31be9")
+		(uuid "deff7826-9d8d-431d-9e1f-ca393df00dbf")
 		(effects
 			(font
 				(size 0.25 0.25)
@@ -139,14 +127,25 @@
 		(size 0.56 0.62)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
-		(uuid "4fcf4bbb-8f81-4e6e-8173-6bcef957a416")
+		(uuid "60e51256-6cfe-4787-b3b5-178cb99a0803")
 	)
 	(pad "2" smd roundrect
 		(at 0.48 0)
 		(size 0.56 0.62)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.25)
-		(uuid "07cf3994-2b5c-4c7d-9298-791d0c65cddf")
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges no)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
+		(uuid "97811651-c48a-4cf4-9af9-4b9cd67aa344")
 	)
 	(embedded_fonts no)
 	(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0402_1005Metric.step"
