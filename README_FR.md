@@ -15,7 +15,7 @@
 
 [🇬🇧 English version](README.md) · [📄 Schéma (PDF)](arm_tiny_pcb_sch.pdf) · [🧰 Mise en route](#mise-en-route) · [📌 Brochage](#brochage)
 
-<img src="docs/board_3d.jpg" alt="NanoCortex-F042 vue de dessus" height="430"> <img src="docs/board_3d_iso.jpg" alt="NanoCortex-F042 vue 3D en perspective" height="430">
+<img src="docs/board_3d.jpg" alt="NanoCortex-F042 vue de dessus" height="400"> <img src="docs/board_3d_back.jpg" alt="NanoCortex-F042 vue de dessous avec marquage CaveRover" height="400"> <img src="docs/board_3d_iso.jpg" alt="NanoCortex-F042 vue 3D en perspective" height="400">
 
 </div>
 
@@ -191,7 +191,7 @@ Vous pouvez téléverser votre code compilé (`.bin` ou `.hex`) avec :
 | [`arm_tiny_pcb.kicad_pcb`](arm_tiny_pcb.kicad_pcb) | Routage PCB KiCad |
 | [`arm_tiny_pcb_sch.pdf`](arm_tiny_pcb_sch.pdf) | Export du schéma (PDF) |
 | [`arm_tiny_pcb.jpg`](arm_tiny_pcb.jpg) | Rendu 3D de la carte (pleine taille) |
-| [`docs/`](docs) | Images utilisées dans ce README (vue de dessus, vue 3D en perspective, aperçu du schéma) |
+| [`docs/`](docs) | Images utilisées dans ce README (vue de dessus, vue de dessous, perspective 3D, aperçu du schéma, logo) |
 | [`NanoCortex.kicad_sym`](NanoCortex.kicad_sym) | Bibliothèque de symboles du projet |
 | [`NanoCortex.pretty/`](NanoCortex.pretty) | Bibliothèque d'empreintes du projet |
 | [`NanoCortex.3dshapes/`](NanoCortex.3dshapes) | Modèles 3D (`.wrl`) des empreintes du projet |

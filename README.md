@@ -15,7 +15,7 @@
 
 [🇫🇷 Version française](README_FR.md) · [📄 Schematic (PDF)](arm_tiny_pcb_sch.pdf) · [🧰 Getting started](#getting-started) · [📌 Pinout](#pinout)
 
-<img src="docs/board_3d.jpg" alt="NanoCortex-F042 top view" height="430"> <img src="docs/board_3d_iso.jpg" alt="NanoCortex-F042 3D perspective" height="430">
+<img src="docs/board_3d.jpg" alt="NanoCortex-F042 top view" height="400"> <img src="docs/board_3d_back.jpg" alt="NanoCortex-F042 bottom view with CaveRover branding" height="400"> <img src="docs/board_3d_iso.jpg" alt="NanoCortex-F042 3D perspective" height="400">
 
 </div>
 
@@ -191,7 +191,7 @@ Flash compiled `.bin` or `.hex` firmware using your tool of choice:
 | [`arm_tiny_pcb.kicad_pcb`](arm_tiny_pcb.kicad_pcb) | KiCad PCB layout |
 | [`arm_tiny_pcb_sch.pdf`](arm_tiny_pcb_sch.pdf) | Schematic export (PDF) |
 | [`arm_tiny_pcb.jpg`](arm_tiny_pcb.jpg) | 3D render of the board (full size) |
-| [`docs/`](docs) | Images used in this README (top view, 3D perspective, schematic preview) |
+| [`docs/`](docs) | Images used in this README (top view, bottom view, 3D perspective, schematic preview, branding) |
 | [`NanoCortex.kicad_sym`](NanoCortex.kicad_sym) | Project symbol library |
 | [`NanoCortex.pretty/`](NanoCortex.pretty) | Project footprint library |
 | [`NanoCortex.3dshapes/`](NanoCortex.3dshapes) | 3D models (`.wrl`) for the project footprints |
