@@ -141,7 +141,7 @@ The board has two 9-pin headers (`J1` on the left, `J2` on the right) and a 2 ×
 | USB1 | GT-USB-7025 | USB Type-C receptacle |
 | SW1 / SW2 | SKRKAEE020 | `RESET` / `BOOT` tactile switches |
 | LED1 | 16-213/BHC-AN1P2/3T | Red `3V3` power LED |
-| LED2 | SK6805-EC20 | RGB `STATUS` LED (addressable) |
+| LED2 | WS2812B-2020-V6 | RGB `STATUS` LED (addressable) |
 | J1 / J2 / J3 | 1×9 / 1×9 / 2×2 pin headers | I/O and power headers |
 
 ---

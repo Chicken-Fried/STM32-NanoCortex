@@ -141,7 +141,7 @@ La carte comporte deux rangées de 9 broches (`J1` à gauche, `J2` à droite) et
 | USB1 | GT-USB-7025 | Connecteur USB Type-C |
 | SW1 / SW2 | SKRKAEE020 | Boutons tactiles `RESET` / `BOOT` |
 | LED1 | 16-213/BHC-AN1P2/3T | LED rouge d'alimentation `3V3` |
-| LED2 | SK6805-EC20 | LED RGB `STATUS` (adressable) |
+| LED2 | WS2812B-2020-V6 | LED RGB `STATUS` (adressable) |
 | J1 / J2 / J3 | Barrettes 1×9 / 1×9 / 2×2 | Connecteurs d'E/S et d'alimentation |
 
 ---
