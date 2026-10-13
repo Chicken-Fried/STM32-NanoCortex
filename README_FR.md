@@ -1,12 +1,16 @@
 <div align="center">
 
+<img src="docs/caverover_logo.png" alt="CaveRover Logo" width="130">
+
 # ⚡ NanoCortex-F042
+### par CaveRover
 
 **Carte de développement ARM Cortex-M0 minimaliste — 20 mm × 38,5 mm, USB-C natif, sans quartz**
 
 [![KiCad](https://img.shields.io/badge/KiCad-10.0-blue.svg?logo=kicad)](https://www.kicad.org/)
 [![Hardware](https://img.shields.io/badge/Open%20Source-Hardware-green.svg)](https://freedomdefined.org/OSHW)
 [![MCU](https://img.shields.io/badge/MCU-STM32F042-orange.svg?logo=stmicroelectronics)](https://www.st.com/)
+[![Maker: CaveRover](https://img.shields.io/badge/Maker-CaveRover-00d2ff.svg)](#)
 [![License: MIT](https://img.shields.io/badge/Licence-MIT-yellow.svg)](LICENSE)
 
 [🇬🇧 English version](README.md) · [📄 Schéma (PDF)](arm_tiny_pcb_sch.pdf) · [🧰 Mise en route](#mise-en-route) · [📌 Brochage](#brochage)
@@ -38,11 +42,12 @@ Ce projet est né au croisement de mes études en électronique, de ma curiosit�
 * **🧠 Cœur de calcul :** STMicroelectronics **STM32F042F6P6** (ARM Cortex-M0 cadencé à 48 MHz, 32 Ko Flash, 6 Ko RAM).
 * **🔌 USB-C sans quartz (*Crystal-less*) :** Utilisation de l'oscillateur interne 48 MHz (`HSI48`) couplé au système de récupération d'horloge (`CRS`) synchronisé directement sur le bus USB. **Aucun composant ni quartz externe n'est requis.**
 * **🚀 Téléversement direct sans programmateur (DFU natif) :** Bootloader USB officiel gravé en mémoire morte (ROM). En maintenant le bouton `BOOT` à la mise sous tension, la carte est immédiatement reconnue par l'ordinateur et prête à être flashée via `STM32CubeProgrammer` ou `dfu-util` (pas besoin de sonde ST-Link obligatoire).
-* **📐 Format Devboard Compact (20 mm × 38,5 mm) :** Format fin et compatible breadboard, avec deux rangées de 9 broches sur les grands côtés et les boutons `BOOT` / `RESET` de part et d'autre du connecteur USB-C.
+* **📐 Format Devboard Compact (20 mm × 38,5 mm) :** Format fin avec deux rangées de 9 broches sur les grands côtés et les boutons `BOOT` / `RESET` de part et d'autre du connecteur USB-C.
 * **🛡️ Protection USB renforcée :** Diode TVS **SD05-01FTG** sur `VBUS`, **USBLC6-2SC6** sur les lignes de données et fusible réarmable 500 mA.
 * **⚡ Alimentation 3,3 V stable :** Régulateur LDO **ME6211C33M5G-N** à faible chute de tension et faible courant de repos, stable avec de petits **condensateurs céramiques** (fini le tantale).
-* **💡 Deux LED témoins :** une LED rouge d'alimentation `3V3` et une LED RGB adressable **SK6805-EC20** `STATUS` pilotée par `PA0`.
+* **💡 Deux LED témoins :** une LED rouge d'alimentation `3V3` et une LED RGB adressable **WS2812B-2020-V6** `STATUS` pilotée par `PA0` (fonctionnement natif sous 3,3 V avec condensateur de découplage dédié `C8` de 100 nF).
 * **🎛️ Boutons tactiles intégrés :** Deux micro-boutons-poussoirs en face avant pour le `RESET` et le mode `BOOT`.
+* **🛰️ Signature visuelle CaveRover :** Logo officiel du rover en pixel art 8 bits et typographie futuriste Anurati sérigraphiés directement sur le PCB.
 * **🛠️ Conçu pour la fabrication moderne :** Règles de routage 2 couches optimisées pour une fabrication économique chez les fabricants de circuits imprimés (ex: JLCPCB).
 
 ---
@@ -54,13 +59,13 @@ Ce projet est né au croisement de mes études en électronique, de ma curiosit�
 | **Microcontrôleur** | STM32F042F6P6 (boîtier TSSOP-20) |
 | **Architecture** | ARM 32-bit Cortex-M0 (jusqu'à 48 MHz) |
 | **Mémoire** | 32 Ko Flash / 6 Ko SRAM |
-| **Tension de fonctionnement** | 3,3 V logique (entrée : 5 V via USB-C) |
+| **Tension de fonctionnement** | 3,3 V logique (Double rail accessible : 5 V via USB-C + 3,3 V régulé) |
 | **Régulateur 3,3 V** | ME6211C33M5G-N (LDO, SOT-23-5) avec 2 condensateurs céramiques (X7R, 25 V, 0805) |
 | **Protection d'entrée** | SD05-01FTG (TVS) + USBLC6-2SC6 (lignes USB) + fusible réarmable 500 mA |
 | **Interface USB** | USB 2.0 Full Speed (12 Mbps) sur connecteur USB-C |
-| **Entrées / Sorties (GPIO)** | 13 GPIO sur broches 2,54 mm (I2C, SPI, USART, PWM, ADC) |
-| **Programmation** | USB DFU natif (bootloader ROM) ou SWD sur `PA13` / `PA14` |
-| **LED embarquées** | LED rouge d'alimentation `3V3` + LED RGB SK6805-EC20 (`PA0`) |
+| **Entrées / Sorties (GPIO)** | 12 GPIO sur broches 2,54 mm (9 GPIO pures, 1 partagée avec BOOT0, 2 partagées avec SWD) + 1 broche matérielle dédiée `NRST` |
+| **Programmation & Debug** | USB DFU natif (bootloader ROM) ou port SWD 4 broches complet (`GND`, `NRST`, `SWDIO`, `SWCLK`) |
+| **LED embarquées** | LED rouge d'alimentation `3V3` + LED RGB WS2812B-2020-V6 (`PA0`) avec condensateur de découplage 100 nF |
 | **Dimensions** | **20 mm × 38,5 mm** |
 
 ---
@@ -70,31 +75,37 @@ Ce projet est né au croisement de mes études en électronique, de ma curiosit�
 
 La carte comporte deux rangées de 9 broches (`J1` à gauche, `J2` à droite) et un connecteur d'alimentation 2 × 2 (`J3`) en bas.
 
-| Connecteur | Broche | Signal | Broche MCU | Remarques |
+| Connecteur | Broche | Signal | Broche MCU | Fonctions principales et alternatives / Remarques |
 | :---: | :---: | :--- | :--- | :--- |
-| **J1** | 1 | `3V3` | – | Rail 3,3 V |
-| | 2 | `GPIO1` | `PB8` | Partagée avec `BOOT0` (pull-down 10 kΩ) |
-| | 3 | `GPIO2` | `PF0` | |
-| | 4 | `GPIO3` | `PF1` | |
-| | 5 | `GPIO5` | `PA1` | |
-| | 6 | `GPIO6` | `PA2` | |
-| | 7 | `GPIO7` | `PA3` | |
-| | 8 | `GPIO8` | `PA4` | |
-| | 9 | `GND` | – | |
-| **J2** | 1 | `3V3` | – | Rail 3,3 V |
-| | 2 | `GPIO9` | `PA5` | |
-| | 3 | `GPIO10` | `PA6` | |
-| | 4 | `GPIO11` | `PA7` | |
-| | 5 | `GPIO12` | `PB1` | |
-| | 6 | `GND` | – | |
-| | 7 | `GND` | – | |
-| | 8 | `GPIO15` | `PA13` | `SWDIO` |
-| | 9 | `GPIO16` | `PA14` | `SWCLK` |
-| **J3** | 1–4 | `3V3` / `GND` | – | Connecteur 2 × 2 : 2 × `3V3`, 2 × `GND` (sortie d'alimentation) |
+| **J1** | 1 | `5V` | – | Rail d'alimentation 5,0 V (VBUS post-fusible `F1`, jusqu'à 500 mA pour drones / AOP) |
+| | 2 | `GPIO1` | `PB8` | Partagée avec `BOOT0` (pull-down 10 kΩ). **Ne pas forcer à l'état HAUT au démarrage !** |
+| | 3 | `GPIO2` | `PF0` | `OSC_IN` / I2C1_SDA |
+| | 4 | `GPIO3` | `PF1` | `OSC_OUT` / I2C1_SCL |
+| | 5 | `GPIO5` | `PA1` | `ADC_IN1` / TIM2_CH2 / EVENTOUT |
+| | 6 | `GPIO6` | `PA2` | `USART2_TX` / `ADC_IN2` / TIM15_CH1 / TIM2_CH3 |
+| | 7 | `GPIO7` | `PA3` | `USART2_RX` / `ADC_IN3` / TIM15_CH2 / TIM2_CH4 |
+| | 8 | `GPIO8` | `PA4` | `ADC_IN4` / SPI1_NSS / TIM14_CH1 |
+| | 9 | `GND` | – | Masse |
+| **J2** | 1 | `3V3` | – | Rail d'alimentation 3,3 V régulé |
+| | 2 | `GPIO9` | `PA5` | `ADC_IN5` / SPI1_SCK |
+| | 3 | `GPIO10` | `PA6` | `ADC_IN6` / SPI1_MISO / TIM3_CH1 / TIM16_CH1 |
+| | 4 | `GPIO11` | `PA7` | `ADC_IN7` / SPI1_MOSI / TIM3_CH2 / TIM14_CH1 / TIM17_CH1 |
+| | 5 | `GPIO12` | `PB1` | `ADC_IN9` / TIM3_CH4 / TIM14_CH1 |
+| | 6 | `GND` | – | Masse |
+| | 7 | `NRST` | Broche 4 | Ligne de Reset matériel (support du *Connect Under Reset* ST-Link et bouton reset déporté) |
+| | 8 | `GPIO15` | `PA13` | `SWDIO` (données SWD) / IR_OUT / USB_NOE |
+| | 9 | `GPIO16` | `PA14` | `SWCLK` (horloge SWD) / USART2_TX |
+| **J3** | 1–4 | `3V3` / `GND` | – | Connecteur 2 × 2 : 2 × `3V3`, 2 × `GND` (sortie d'alimentation auxiliaire) |
 
-> **Signaux internes :** `PA0` → données de la LED RGB `STATUS` · `NRST` → bouton `RESET` + pull-up 10 kΩ + 100 nF · `BOOT0` → bouton `BOOT`.
+> ⚠️ **Avertissement crucial sur `PB8 / BOOT0` (`GPIO1`) :** La broche 1 du boîtier TSSOP-20 est partagée entre `BOOT0` et `PB8`. Elle est maintenue à l'état bas par $R_7$ (10 kΩ) pour lancer la mémoire Flash utilisateur. Tout montage externe relié à `GPIO1` qui maintiendrait cette broche à 3,3 V au reset forcera la puce à démarrer sur le bootloader USB DFU en ROM.
 >
-> **Broches USB :** sur le boîtier TSSOP-20, `D-` / `D+` utilisent les broches 17 / 18 (`PA11` / `PA12` remappées depuis `PA9` / `PA10`). Voir le manuel de référence STM32F042 (`SYSCFG_CFGR1`, `PA11_PA12_RMP`).
+> 💡 **Signaux internes & Allocation ADC :**
+> * `PA0` est dédiée au pilotage de la LED d'état RGB **WS2812B-2020-V6** via $R_6$ (330 Ω). Le canal analogique `ADC_IN0` est donc réservé à la LED interne. **7 canaux ADC libres** restent disponibles sur les connecteurs (`PA1` à `PA7`).
+> * `NRST` est reliée au bouton `RESET`, filtrée par 100 nF et accessible sur `J2` broche 7 pour un contrôle matériel complet par sonde de débogage.
+>
+> 🔌 **Communication Série (`USART1` vs `USART2`) :**
+> * Pour la communication UART utilisateur (ex: télémétrie drone CRSF/SBUS, console série), **utiliser `USART2` (`PA2`/`PA3`) sur le connecteur `J1`**.
+> * Sur le boîtier TSSOP-20, `USART1` (`PA9`/`PA10`) partage les mêmes broches physiques de silicium que l'USB Full-Speed (`PA11`/`PA12`). Quand l'USB est actif, `USART1` est indisponible.
 
 ---
 
@@ -198,7 +209,7 @@ Cette carte sert de plateforme de prototypage et de banc de validation pour troi
 Exploiter la NanoCortex-F042 comme module embarqué ou carte compagne pour drone léger :
 - [ ] **Acquisition capteurs :** Lecture haute fréquence d'une centrale inertielle 6 axes (gyro/accéléromètre en SPI/I2C) cadencée par timer matériel.
 - [ ] **Pilotage actionneurs :** Génération de signaux moteurs rapides (PWM 400 Hz+ / DShot).
-- [ ] **Communication & Télémétrie :** Liaison série temps réel (protocoles CRSF / SBUS / MSP) ou bus CAN.
+- [ ] **Communication & Télémétrie :** Liaison série temps réel (protocoles CRSF / SBUS / MSP sur `USART2`).
 - [ ] **Conception PCB dédié :** Routage d'une carte spécialisée intégrant les étages de puissance et l'alimentation LiPo.
 
 ### 🎛️ Projet 2 : Synthétiseur Hybride USB-MIDI & Laboratoire Audio Analogique (AOP)

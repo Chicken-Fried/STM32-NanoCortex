@@ -1,0 +1,114 @@
+** Drc report for arm_tiny_pcb.kicad_pcb **
+** Created on 2026-10-13T14:51:54 **
+** Report includes: Errors, Warnings **
+
+** Found 27 DRC violations **
+[clearance]: Violation d'isolation ( isolation 0,2000 mm; réel 0,1550 mm)
+    Local override; error
+    @(158.1250 mm, 67.7795 mm): Track [Net-(USB1-CC2)] on F.Cu, length 1.7505 mm
+    @(157.7250 mm, 69.5300 mm): Pad A9 [VBUS] of USB1 on F.Cu
+[clearance]: Violation d'isolation ( isolation 0,2000 mm; réel 0,1550 mm)
+    Local override; error
+    @(160.9250 mm, 67.8819 mm): Track [Net-(USB1-CC1)] on F.Cu, length 1.6481 mm
+    @(161.3250 mm, 69.5300 mm): Pad B9 [VBUS] of USB1 on F.Cu
+[clearance]: Violation d'isolation ( isolation 0,2000 mm; réel 0,1576 mm)
+    Local override; error
+    @(158.5733 mm, 69.4817 mm): Track (arc) [D1+] on F.Cu, length 0.0536 mm
+    @(158.1250 mm, 67.7795 mm): Track [Net-(USB1-CC2)] on F.Cu, length 1.7505 mm
+[clearance]: Violation d'isolation ( isolation 0,2000 mm; réel 0,1600 mm)
+    Local override; error
+    @(158.1250 mm, 69.5300 mm): Pad B5 [Net-(USB1-CC2)] of USB1 on F.Cu
+    @(158.5300 mm, 69.5421 mm): Track [D1+] on F.Cu, length 3.9656 mm
+[clearance]: Violation d'isolation ( isolation 0,2000 mm; réel 0,1750 mm)
+    Local override; error
+    @(158.5129 mm, 69.5421 mm): Track (arc) [D1+] on F.Cu, length 0.0134 mm
+    @(158.1250 mm, 67.7795 mm): Track [Net-(USB1-CC2)] on F.Cu, length 1.7505 mm
+[clearance]: Violation d'isolation ( isolation 0,2000 mm; réel 0,1958 mm)
+    Local override; error
+    @(160.1250 mm, 69.5300 mm): Pad A6 [D1+] of USB1 on F.Cu
+    @(159.3665 mm, 68.8735 mm): Track (arc) [D1-] on F.Cu, length 0.2816 mm
+[clearance]: Violation d'isolation ( isolation 0,2000 mm; réel 0,1550 mm)
+    Local override; error
+    @(158.5250 mm, 68.8132 mm): Track [D1+] on F.Cu, length 0.7168 mm
+    @(158.1250 mm, 69.5300 mm): Pad B5 [Net-(USB1-CC2)] of USB1 on F.Cu
+[clearance]: Violation d'isolation ( isolation 0,2000 mm; réel 0,1721 mm)
+    Local override; error
+    @(159.4510 mm, 68.7890 mm): Track (arc) [D1-] on F.Cu, length 0.1877 mm
+    @(159.5037 mm, 68.1300 mm): Track [D1+] on F.Cu, length 0.4157 mm
+[clearance]: Violation d'isolation ( isolation 0,2000 mm; réel 0,1795 mm)
+    Local override; error
+    @(159.2031 mm, 68.8231 mm): Track (arc) [D1-] on F.Cu, length 0.2145 mm
+    @(159.5037 mm, 68.1300 mm): Track [D1+] on F.Cu, length 0.4157 mm
+[clearance]: Violation d'isolation ( isolation 0,2000 mm; réel 0,1550 mm)
+    Local override; error
+    @(160.1250 mm, 69.5300 mm): Pad A6 [D1+] of USB1 on F.Cu
+    @(159.7250 mm, 69.5300 mm): Track [D1-] on F.Cu, length 1.6800 mm
+[clearance]: Violation d'isolation ( isolation 0,2000 mm; réel 0,1550 mm)
+    Local override; error
+    @(160.1250 mm, 69.5300 mm): Pad A6 [D1+] of USB1 on F.Cu
+    @(159.7250 mm, 69.5300 mm): Track [D1-] on F.Cu, length 0.6565 mm
+[clearance]: Violation d'isolation ( isolation 0,2000 mm; réel 0,1700 mm)
+    Local override; error
+    @(159.4510 mm, 68.5500 mm): Track [D1-] on F.Cu, length 0.2479 mm
+    @(159.5037 mm, 68.1300 mm): Track [D1+] on F.Cu, length 0.4157 mm
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(167.5817 mm, 84.8817 mm): Track (arc) [NRST] on B.Cu, length 0.0536 mm
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(164.9100 mm, 70.7800 mm): Track [+3.3V] on F.Cu, length 0.0003 mm
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(165.0800 mm, 70.3696 mm): Track [+3.3V] on F.Cu, length 0.0003 mm
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(167.6300 mm, 97.4016 mm): Track (arc) [GPIO9] on F.Cu, length 0.0000 mm
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(167.4925 mm, 95.0900 mm): Track (arc) [GPIO10] on F.Cu, length 0.0000 mm
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(164.5078 mm, 73.4072 mm): Track (arc) [Net-(LED2-DI)] on F.Cu, length 0.1475 mm
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: configuration des contraintes de la sérigraphie; warning
+    @(149.5000 mm, 63.9250 mm): Rectangle on Edge.Cuts
+    @(155.0250 mm, 64.4500 mm): Segment of USB1 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: configuration des contraintes de la sérigraphie; warning
+    @(149.5000 mm, 63.9250 mm): Rectangle on Edge.Cuts
+    @(164.0250 mm, 63.2000 mm): Segment of USB1 on F.Silkscreen
+[text_height]: Hauteur de texte hors de plage (configuration des contraintes du PCB hauteur de texte sur sérigraphie hauteur min 0,8000 mm; réel 0,6000 mm)
+    Rule: configuration des contraintes du PCB hauteur de texte sur sérigraphie; warning
+    @(152.2200 mm, 70.8000 mm): PCB text 'BOOT' on F.Silkscreen
+[text_height]: Hauteur de texte hors de plage (configuration des contraintes du PCB hauteur de texte sur sérigraphie hauteur min 0,8000 mm; réel 0,6000 mm)
+    Rule: configuration des contraintes du PCB hauteur de texte sur sérigraphie; warning
+    @(164.7300 mm, 84.9700 mm): PCB text 'NRST' on F.Silkscreen
+[text_height]: Hauteur de texte hors de plage (configuration des contraintes du PCB hauteur de texte sur sérigraphie hauteur min 0,8000 mm; réel 0,6000 mm)
+    Rule: configuration des contraintes du PCB hauteur de texte sur sérigraphie; warning
+    @(164.9300 mm, 87.5900 mm): PCB text 'GND' on F.Silkscreen
+[text_height]: Hauteur de texte hors de plage (configuration des contraintes du PCB hauteur de texte sur sérigraphie hauteur min 0,8000 mm; réel 0,6000 mm)
+    Rule: configuration des contraintes du PCB hauteur de texte sur sérigraphie; warning
+    @(166.1900 mm, 77.2000 mm): PCB text '3V3' on F.Silkscreen
+[text_height]: Hauteur de texte hors de plage (configuration des contraintes du PCB hauteur de texte sur sérigraphie hauteur min 0,8000 mm; réel 0,6000 mm)
+    Rule: configuration des contraintes du PCB hauteur de texte sur sérigraphie; warning
+    @(166.7200 mm, 73.7600 mm): PCB text 'STATUS' on F.Silkscreen
+[text_height]: Hauteur de texte hors de plage (configuration des contraintes du PCB hauteur de texte sur sérigraphie hauteur min 0,8000 mm; réel 0,6000 mm)
+    Rule: configuration des contraintes du PCB hauteur de texte sur sérigraphie; warning
+    @(167.0100 mm, 70.8200 mm): PCB text 'RESET' on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(163.3350 mm, 77.4300 mm): Circle of LED1 on F.Silkscreen
+    @(163.4250 mm, 77.1800 mm): Pad 1 [Net-(LED1-A)] of LED1 on F.Cu
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **

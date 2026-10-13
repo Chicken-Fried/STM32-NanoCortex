@@ -1,12 +1,16 @@
 <div align="center">
 
+<img src="docs/caverover_logo.png" alt="CaveRover Logo" width="130">
+
 # ⚡ NanoCortex-F042
+### by CaveRover
 
 **Minimalist ARM Cortex-M0 development board — 20 mm × 38.5 mm, native USB-C, crystal-less**
 
 [![KiCad](https://img.shields.io/badge/KiCad-10.0-blue.svg?logo=kicad)](https://www.kicad.org/)
 [![Hardware](https://img.shields.io/badge/Open%20Source-Hardware-green.svg)](https://freedomdefined.org/OSHW)
 [![MCU](https://img.shields.io/badge/MCU-STM32F042-orange.svg?logo=stmicroelectronics)](https://www.st.com/)
+[![Maker: CaveRover](https://img.shields.io/badge/Maker-CaveRover-00d2ff.svg)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [🇫🇷 Version française](README_FR.md) · [📄 Schematic (PDF)](arm_tiny_pcb_sch.pdf) · [🧰 Getting started](#getting-started) · [📌 Pinout](#pinout)
@@ -38,11 +42,12 @@ This board was born at the intersection of academic learning, curiosity, and mak
 * **🧠 Brain:** STMicroelectronics **STM32F042F6P6** (ARM Cortex-M0 @ 48 MHz, 32 KB Flash, 6 KB RAM).
 * **🔌 Crystal-less USB-C:** Employs the internal 48 MHz oscillator (`HSI48`) paired with Clock Recovery System (`CRS`) synchronized directly to USB frames—**zero external crystal required**.
 * **🚀 Zero-Programmer Flashing (Native DFU):** Factory ROM USB bootloader built-in. Hold the `BOOT` button, plug in the USB-C cable, and flash directly with `STM32CubeProgrammer` or `dfu-util`—no ST-Link or external programmer strictly required!
-* **📐 Compact Devboard Layout (20 mm × 38.5 mm):** Slim, breadboard-friendly format with two 9-pin I/O headers on the long sides, and the `BOOT` / `RESET` buttons on each side of the USB-C connector.
+* **📐 Compact Devboard Layout (20 mm × 38.5 mm):** Slim form factor with two 9-pin I/O headers on the long sides, and the `BOOT` / `RESET` buttons on each side of the USB-C connector.
 * **🛡️ Enhanced USB Protection:** **SD05-01FTG** TVS diode on `VBUS`, **USBLC6-2SC6** on the data lines and a 500 mA resettable polyfuse.
 * **⚡ Stable 3.3 V:** **ME6211C33M5G-N** low-dropout, low-quiescent-current LDO, stable with small **ceramic capacitors** (no more tantalum).
-* **💡 Two Indicator LEDs:** a red `3V3` power LED and an addressable **SK6805-EC20** RGB `STATUS` LED driven from `PA0`.
+* **💡 Two Indicator LEDs:** a red `3V3` power LED and an addressable **WS2812B-2020-V6** RGB `STATUS` LED driven from `PA0` (native 3.3 V operation with dedicated 100 nF decoupling capacitor `C8`).
 * **🎛️ Dual Tactile Buttons:** On-board `RESET` and `BOOT` tactile switches for instant programming mode entry.
+* **🛰️ CaveRover Branding:** Features the official 8-bit pixel art CaveRover rover silkscreen emblem and futuristic Anurati typographic markings directly on the PCB.
 * **🛠️ Open-Source & DIY Ready:** Standard 2-layer PCB design rules for affordable fabrication and assembly (e.g. JLCPCB).
 
 ---
@@ -54,13 +59,13 @@ This board was born at the intersection of academic learning, curiosity, and mak
 | **Microcontroller** | STM32F042F6P6 (TSSOP-20) |
 | **Core Architecture** | ARM 32-bit Cortex-M0 @ up to 48 MHz |
 | **Flash / SRAM** | 32 KB Flash / 6 KB SRAM |
-| **Operating Voltage** | 3.3 V logic (input: 5 V via USB-C) |
+| **Operating Voltage** | 3.3 V logic (Dual power rails exposed: 5 V via USB-C + 3.3 V regulated) |
 | **3.3 V Regulator** | ME6211C33M5G-N (LDO, SOT-23-5) with 2 ceramic capacitors (X7R, 25 V, 0805) |
 | **Input Protection** | SD05-01FTG (TVS) + USBLC6-2SC6 (USB data lines) + 500 mA polyfuse |
 | **USB Interface** | USB 2.0 Full Speed (12 Mbps) over USB-C |
-| **User I/O** | 13 GPIOs on 2.54 mm headers (I2C, SPI, USART, PWM, ADC) |
-| **Programming** | Native USB DFU (ROM bootloader) or SWD on `PA13` / `PA14` |
-| **On-board LEDs** | Red `3V3` power LED + SK6805-EC20 RGB status LED (`PA0`) |
+| **User I/O** | 12 GPIOs on 2.54 mm headers (9 general-purpose, 1 shared with BOOT0, 2 shared with SWD) + dedicated hardware `NRST` |
+| **Programming & Debug** | Native USB DFU (ROM bootloader) or full 4-wire SWD (`GND`, `NRST`, `SWDIO`, `SWCLK`) |
+| **On-board LEDs** | Red `3V3` power LED + WS2812B-2020-V6 RGB status LED (`PA0`) with 100 nF decoupling capacitor |
 | **Dimensions** | **20 mm × 38.5 mm** |
 
 ---
@@ -70,31 +75,37 @@ This board was born at the intersection of academic learning, curiosity, and mak
 
 The board has two 9-pin headers (`J1` on the left, `J2` on the right) and a 2 × 2 power header (`J3`) at the bottom edge.
 
-| Header | Pin | Signal | MCU pin | Notes |
+| Header | Pin | Signal | MCU pin | Primary & Alternate Functions / Notes |
 | :---: | :---: | :--- | :--- | :--- |
-| **J1** | 1 | `3V3` | – | 3.3 V rail |
-| | 2 | `GPIO1` | `PB8` | Shared with `BOOT0` (10 kΩ pull-down) |
-| | 3 | `GPIO2` | `PF0` | |
-| | 4 | `GPIO3` | `PF1` | |
-| | 5 | `GPIO5` | `PA1` | |
-| | 6 | `GPIO6` | `PA2` | |
-| | 7 | `GPIO7` | `PA3` | |
-| | 8 | `GPIO8` | `PA4` | |
-| | 9 | `GND` | – | |
-| **J2** | 1 | `3V3` | – | 3.3 V rail |
-| | 2 | `GPIO9` | `PA5` | |
-| | 3 | `GPIO10` | `PA6` | |
-| | 4 | `GPIO11` | `PA7` | |
-| | 5 | `GPIO12` | `PB1` | |
-| | 6 | `GND` | – | |
-| | 7 | `GND` | – | |
-| | 8 | `GPIO15` | `PA13` | `SWDIO` |
-| | 9 | `GPIO16` | `PA14` | `SWCLK` |
-| **J3** | 1–4 | `3V3` / `GND` | – | 2 × 2 header: 2 × `3V3`, 2 × `GND` (power breakout) |
+| **J1** | 1 | `5V` | – | 5.0 V power rail (VBUS post-polyfuse `F1`, up to 500 mA for drones/op-amps) |
+| | 2 | `GPIO1` | `PB8` | Shared with `BOOT0` (10 kΩ pull-down). **Do not pull HIGH at boot!** |
+| | 3 | `GPIO2` | `PF0` | `OSC_IN` / I2C1_SDA |
+| | 4 | `GPIO3` | `PF1` | `OSC_OUT` / I2C1_SCL |
+| | 5 | `GPIO5` | `PA1` | `ADC_IN1` / TIM2_CH2 / EVENTOUT |
+| | 6 | `GPIO6` | `PA2` | `USART2_TX` / `ADC_IN2` / TIM15_CH1 / TIM2_CH3 |
+| | 7 | `GPIO7` | `PA3` | `USART2_RX` / `ADC_IN3` / TIM15_CH2 / TIM2_CH4 |
+| | 8 | `GPIO8` | `PA4` | `ADC_IN4` / SPI1_NSS / TIM14_CH1 |
+| | 9 | `GND` | – | Ground |
+| **J2** | 1 | `3V3` | – | 3.3 V regulated power rail |
+| | 2 | `GPIO9` | `PA5` | `ADC_IN5` / SPI1_SCK |
+| | 3 | `GPIO10` | `PA6` | `ADC_IN6` / SPI1_MISO / TIM3_CH1 / TIM16_CH1 |
+| | 4 | `GPIO11` | `PA7` | `ADC_IN7` / SPI1_MOSI / TIM3_CH2 / TIM14_CH1 / TIM17_CH1 |
+| | 5 | `GPIO12` | `PB1` | `ADC_IN9` / TIM3_CH4 / TIM14_CH1 |
+| | 6 | `GND` | – | Ground |
+| | 7 | `NRST` | Pin 4 | Hardware Reset line (supports ST-Link "Connect Under Reset" and remote reset button) |
+| | 8 | `GPIO15` | `PA13` | `SWDIO` (SWD Data) / IR_OUT / USB_NOE |
+| | 9 | `GPIO16` | `PA14` | `SWCLK` (SWD Clock) / USART2_TX |
+| **J3** | 1–4 | `3V3` / `GND` | – | 2 × 2 header: 2 × `3V3`, 2 × `GND` (auxiliary power breakout) |
 
-> **Internal signals:** `PA0` → SK6805 status LED data · `NRST` → `RESET` button + 10 kΩ pull-up + 100 nF · `BOOT0` → `BOOT` button.
+> ⚠️ **Important Note on `PB8 / BOOT0` (`GPIO1`):** Pin 1 of the TSSOP-20 package is shared between `BOOT0` and `PB8`. It is pulled down to GND via $R_7$ (10 kΩ) for normal Flash execution. Any external circuitry attached to `GPIO1` that pulls this pin HIGH at reset will force the microcontroller into native USB DFU bootloader mode.
 >
-> **USB pins:** on the TSSOP-20 package, USB `D-` / `D+` use pins 17 / 18 (`PA11` / `PA12` remapped from `PA9` / `PA10`). See the STM32F042 reference manual (`SYSCFG_CFGR1`, `PA11_PA12_RMP`).
+> 💡 **Internal Signals & ADC Allocation:**
+> * `PA0` is dedicated internally to the **WS2812B-2020-V6** RGB status LED via $R_6$ (330 Ω). Consequently, analog channel `ADC_IN0` is reserved for on-board LED operation. **7 external ADC channels** remain freely available on the headers (`PA1` to `PA7`).
+> * `NRST` is wired to the tactile `RESET` button with a 100 nF debounce capacitor and routed to `J2` pin 7 for full debugger control.
+>
+> 🔌 **Serial Communication (`USART1` vs `USART2`):**
+> * For user serial communication (e.g. drone CRSF/SBUS telemetry, debug console, GPS), **use `USART2` (`PA2`/`PA3`) on header `J1`**.
+> * On the STM32F042 TSSOP-20 package, `USART1` (`PA9`/`PA10`) shares physical pins 17 & 18 with native USB Full-Speed (`PA11`/`PA12`, `USB_DM`/`USB_DP`). When USB is active, `USART1` cannot be used simultaneously.
 
 ---
 
@@ -198,7 +209,7 @@ This board serves as the prototyping brain for three dedicated embedded hardware
 Using the NanoCortex-F042 as an embedded flight module or motor/sensor companion node:
 - [ ] **Sensor Interface:** High-rate 6-axis IMU (gyro/accelerometer via SPI/I2C) readout on hardware timer interrupts.
 - [ ] **Actuator Control:** Multi-channel high-speed motor control signals (OneShot / DShot / PWM at 400 Hz+).
-- [ ] **Telemetry & Communication:** Real-time bi-directional link over UART (CRSF / SBUS / MSP protocol) or CAN bus.
+- [ ] **Telemetry & Communication:** Real-time bi-directional link over serial UART (`USART2` running CRSF / SBUS / MSP protocol).
 - [ ] **Custom PCB Spin:** Layout of a dedicated, miniaturized drone PCB integrating motor drivers and power management.
 
 ### 🎛️ Track 2: Hybrid USB-MIDI Synthesizer & Analog Op-Amp Audio Lab
