@@ -8,3 +8,9 @@ fp-info-cache
 *.kicad_sch-bak
 *.kicad_pcb-bak
 _autosave-*
+
+# Fabrication and production exports
+production/
+gerber_to_order/
+fabrication-toolkit-options.json
+

@@ -11,7 +11,7 @@
 [![Hardware](https://img.shields.io/badge/Open%20Source-Hardware-green.svg)](https://freedomdefined.org/OSHW)
 [![MCU](https://img.shields.io/badge/MCU-STM32F042-orange.svg?logo=stmicroelectronics)](https://www.st.com/)
 [![Maker: CaveRover](https://img.shields.io/badge/Maker-CaveRover-00d2ff.svg)](#)
-[![License: MIT](https://img.shields.io/badge/Licence-MIT-yellow.svg)](LICENSE)
+[![Licence: CERN-OHL-S-2.0](https://img.shields.io/badge/Licence-CERN--OHL--S--2.0-blue.svg)](LICENSE)
 
 [🇬🇧 English version](README.md) · [📄 Schéma (PDF)](arm_tiny_pcb_sch.pdf) · [🧰 Mise en route](#mise-en-route) · [📌 Brochage](#brochage)
 
@@ -244,4 +244,6 @@ Les retours, conseils et améliorations sont les bienvenus ! Que vous soyez étu
 
 ## 📜 Licence
 
-Ce projet est distribué sous licence [MIT](LICENSE). Vous êtes libre de l'utiliser, le reproduire et l'adapter pour vos propres projets et apprentissages !
+Cette conception matérielle (schémas, routage PCB, empreintes et modèles 3D) est distribuée sous licence **[CERN Open Hardware Licence Version 2 – Strongly Reciprocal (CERN-OHL-S v2)](LICENSE)**.
+
+> ⚖️ **Partage et réciprocité :** Vous êtes libre d'étudier, modifier, fabriquer et distribuer cette carte. Si vous distribuez des versions modifiées ou des produits dérivés de cette conception, vous avez l'obligation légale de mettre à disposition l'intégralité des fichiers sources modifiés sous cette même licence **CERN-OHL-S v2**.

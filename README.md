@@ -11,7 +11,7 @@
 [![Hardware](https://img.shields.io/badge/Open%20Source-Hardware-green.svg)](https://freedomdefined.org/OSHW)
 [![MCU](https://img.shields.io/badge/MCU-STM32F042-orange.svg?logo=stmicroelectronics)](https://www.st.com/)
 [![Maker: CaveRover](https://img.shields.io/badge/Maker-CaveRover-00d2ff.svg)](#)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: CERN-OHL-S-2.0](https://img.shields.io/badge/License-CERN--OHL--S--2.0-blue.svg)](LICENSE)
 
 [🇫🇷 Version française](README_FR.md) · [📄 Schematic (PDF)](arm_tiny_pcb_sch.pdf) · [🧰 Getting started](#getting-started) · [📌 Pinout](#pinout)
 
@@ -244,4 +244,6 @@ Suggestions, questions, and PRs are very welcome! Whether you are a student expl
 
 ## 📜 License
 
-This project is licensed under the [MIT License](LICENSE) - feel free to build, modify, and learn from it!
+This hardware design (schematics, PCB layout, footprints, and 3D models) is licensed under the **[CERN Open Hardware Licence Version 2 – Strongly Reciprocal (CERN-OHL-S v2)](LICENSE)**.
+
+> ⚖️ **Reciprocal Sharing:** You are free to study, modify, build, and distribute this board. If you distribute modified versions or products based on this design, you must make the complete modified source files available under the same **CERN-OHL-S v2** license.
